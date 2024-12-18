@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/main")
 @AllArgsConstructor
 public class RentController {
     private final RentService rentService;
 
-    @PostMapping
+    @PostMapping("/insert")
     public String insert(@RequestBody Rent rent) {
         rentService.insert(rent);
         return "Rent Insert +++++++++++++++";
@@ -31,13 +31,13 @@ public class RentController {
         return "Rent deleted successfully! delete -------";
     }
 
-    @PutMapping
+    @PostMapping("/update")
     public String update(@RequestBody Rent rent) {
         rentService.update(rent);
         return "Rent updated successfully!update update upupupupup";
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Rent> findAll() {
         return rentService.findAll();
     }
