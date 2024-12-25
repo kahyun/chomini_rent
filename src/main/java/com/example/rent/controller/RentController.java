@@ -1,5 +1,6 @@
 package com.example.rent.controller;
 
+import com.example.rent.dto.RentResponseDTO;
 import com.example.rent.entity.Rent;
 import com.example.rent.service.RentService;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/rent")
 @AllArgsConstructor
 public class RentController {
     private final RentService rentService;
@@ -37,8 +38,8 @@ public class RentController {
         return "Rent updated successfully!update update upupupupup";
     }
 
-    @GetMapping("/all")
-    public List<Rent> findAll() {
+    @GetMapping("/list")
+    public List<RentResponseDTO> findAll() {
         return rentService.findAll();
     }
 }
