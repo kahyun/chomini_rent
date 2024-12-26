@@ -10,26 +10,26 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 @RequiredArgsConstructor
-public class RentDAOImpl {
+public class RentDAOImpl implements RentDAO {
     private final RentRepository rentRepository;
-
+    @Override
     public void insert(Rent rent) {
         rentRepository.save(rent);
     }
-
+    @Override
     public Rent findById(Long id) {
         return rentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Rent not found"));
     }
-
+    @Override
     public void delete(Long id) {
         rentRepository.deleteById(id);
     }
-
+    @Override
     public void update(Rent rent) {
         rentRepository.save(rent);
     }
-
+    @Override
     public List<Rent> findAll() {
         return rentRepository.findAll();
     }

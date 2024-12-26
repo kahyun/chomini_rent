@@ -2,9 +2,8 @@ package com.example.rent.controller;
 
 import com.example.rent.dto.RentResponseDTO;
 import com.example.rent.entity.Rent;
-import com.example.rent.service.RentService;
+import com.example.rent.service.RentServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 @RequestMapping("/rent")
 @AllArgsConstructor
 public class RentController {
-    private final RentService rentService;
+    private final RentServiceImpl rentService;
 
     @PostMapping("/insert")
     public String insert(@RequestBody Rent rent) {
