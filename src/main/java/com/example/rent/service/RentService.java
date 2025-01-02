@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface RentService {
-    void insert(Rent rent);
-    Rent findById(Long id);
-    void delete(Long id);
-    void update(Rent rent);
+
+    void updateStatus(Long rentId, String status);
     List<RentResponseDTO> findAll() ;
 }

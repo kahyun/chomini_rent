@@ -5,9 +5,7 @@ import com.example.rent.entity.Rent;
 import java.util.List;
 
 public interface RentDAO {
-    void insert(Rent rent);
-    Rent findById(Long id);
-    void delete(Long id);
-    void update(Rent rent);
+
+    void updateStatus(Long rentId, String status);
     List<Rent> findAll();
 }

@@ -14,26 +14,11 @@ import java.util.List;
 public class RentController {
     private final RentServiceImpl rentService;
 
-    @PostMapping("/insert")
-    public String insert(@RequestBody Rent rent) {
-        rentService.insert(rent);
-        return "Rent Insert +++++++++++++++";
-    }
+    @PostMapping("/update/{rentId}")
+    public String updateStatus(@PathVariable Long rentId, @RequestParam("rentstatus") String status) {
+//        String lockYn = "HIDE".equals(usedYn) ? "N" : "Y";
+        rentService.updateStatus(rentId, status);
 
-    @GetMapping("/{id}")
-    public Rent findById(@PathVariable Long id) {
-        return rentService.findById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public String delete(@PathVariable Long id) {
-        rentService.delete(id);
-        return "Rent deleted successfully! delete -------";
-    }
-
-    @PostMapping("/update")
-    public String update(@RequestBody Rent rent) {
-        rentService.update(rent);
         return "Rent updated successfully!update update upupupupup";
     }
 

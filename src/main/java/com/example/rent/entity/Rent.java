@@ -35,4 +35,7 @@ public class Rent {
         this.articleId = articleId;
         this.borrowerId = borrowerId;
     }
+
+    public void setStatus(String status) {
+    }
 }

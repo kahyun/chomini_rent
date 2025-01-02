@@ -13,21 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RentServiceImpl implements RentService {
     private final RentDAOImpl rentDAO;
+
     @Override
-    public void insert(Rent rent) {
-        rentDAO.insert(rent);
-    }
-    @Override
-    public Rent findById(Long id) {
-        return rentDAO.findById(id);
-    }
-    @Override
-    public void delete(Long id) {
-        rentDAO.delete(id);
-    }
-    @Override
-    public void update(Rent rent) {
-        rentDAO.update(rent);
+    public void updateStatus(Long rentId, String status) {
+        rentDAO.updateStatus(rentId, status);
     }
     @Override
     public List<RentResponseDTO> findAll() {
